@@ -3,7 +3,10 @@
 @section('content')
 
     <div class="container p-3">
-        <h1>Projects</h1>
+        <div class="row align-items-center">
+            <h1 class="col-auto">Projects</h1>
+            <a href="{{ route('admin.projects.create') }}" class="col-auto ms-auto link-underline link-underline-opacity-0 fw-bold link-primary">Create</a>
+        </div>
     </div>
     <div class="container p-3">
         <table class="table">
@@ -19,7 +22,7 @@
               @foreach ($projects as $project)
                 <tr>
                   <td>{{ $project->id }}</td>
-                  <td><a href="{{ route('admin.projects.show', $project) }}">{{ $project->title }}</a></td>                
+                  <td><a class="link-underline link-underline-opacity-0 fw-bold" href="{{ route('admin.projects.show', $project) }}">{{ $project->title }}</a></td>                
                   <td>{{ $project->description }}</td>
                   <td>
                     {{-- edit e delete --}}
