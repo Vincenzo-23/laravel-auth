@@ -29,9 +29,9 @@ Route::middleware(['auth', 'verified'])
         })->name('dashboard');
 
         //registrazione delle rotte protette per le CRUD
-        // Route::resource('projects', ProjectController::class);
+        Route::resource('projects', ProjectController::class);
 
-        Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+        
     });
 
 
