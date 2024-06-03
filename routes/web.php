@@ -20,16 +20,18 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])
-    ->name('admin')
-    ->prefix('admin')
-    ->group(function () {
+->name('admin.')
+->prefix('admin')
+->group(function () {
 
         Route::get('/', function () {
             return view('admin.dashboard');
         })->name('dashboard');
 
         //registrazione delle rotte protette per le CRUD
-        Route::resource('projects', ProjectController::class);
+        // Route::resource('projects', ProjectController::class);
+
+        Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
     });
 
 
