@@ -9,7 +9,7 @@
 </div>
 
 <div class="container p-4">
-  <form action="" method="POST">
+  <form action="{{ route('admin.projects.store') }}" method="POST">
 
     @csrf 
 
@@ -27,7 +27,7 @@
       <label for="description" class="form-label"><strong>Project description</strong></label>
       <textarea class="form-control" name="description" id="description" rows="3" placeholder="Write a description of your project"></textarea>
     </div>
-    
+
 
     <button class="btn btn-primary">Add</button>
   </form>
